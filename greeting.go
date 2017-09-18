@@ -74,6 +74,30 @@ const (
 	ExtNeulevel10 = "urn:ietf:params:xml:ns:neulevel-1.0"
 )
 
+// PreferredExtensions is a list of EPP extensions.
+// On login, the EPP client will prefer the first extension
+// advertised by the server in each list and request it.
+var PreferredExtensions = [][]string{
+	{
+		"urn:ietf:params:xml:ns:fee-0.21",
+		"urn:ietf:params:xml:ns:fee-0.11",
+		"urn:ietf:params:xml:ns:fee-0.9",
+		"urn:ietf:params:xml:ns:fee-0.9",
+		"urn:ietf:params:xml:ns:fee-0.8",
+		"urn:ietf:params:xml:ns:fee-0.7",
+		"urn:ietf:params:xml:ns:fee-0.6",
+		"urn:ietf:params:xml:ns:fee-0.5",
+	},
+	{
+		"http://www.verisign-grs.com/epp/namestoreExt-1.1",
+		"http://www.unitedtld.com/epp/charge-1.0",
+	},
+	{
+		"urn:ietf:params:xml:ns:neulevel-1.0",
+		"urn:ietf:params:xml:ns:neulevel",
+	},
+}
+
 // ExtURNNames maps short extension names to their full URN.
 var ExtURNNames = map[string]string{
 	"secDNS-1.1":       ExtSecDNS,
