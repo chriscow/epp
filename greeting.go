@@ -28,7 +28,7 @@ type Greeting struct {
 	Extensions []string `xml:"svcMenu>svcExtension>extURI,omitempty"`
 }
 
-// SupportsExtension returns true if the EPP server supports
+// SupportsObject returns true if the EPP server supports
 // the object specified by uri.
 func (g *Greeting) SupportsObject(uri string) bool {
 	for _, v := range g.Objects {
@@ -79,22 +79,23 @@ const (
 // advertised by the server in each list and request it.
 var PreferredExtensions = [][]string{
 	{
-		"urn:ietf:params:xml:ns:fee-0.21",
-		"urn:ietf:params:xml:ns:fee-0.11",
-		"urn:ietf:params:xml:ns:fee-0.9",
-		"urn:ietf:params:xml:ns:fee-0.9",
-		"urn:ietf:params:xml:ns:fee-0.8",
-		"urn:ietf:params:xml:ns:fee-0.7",
-		"urn:ietf:params:xml:ns:fee-0.6",
-		"urn:ietf:params:xml:ns:fee-0.5",
+		ExtFee21,
+		ExtFee11,
+		ExtFee09,
+		ExtFee08,
+		ExtFee07,
+		ExtFee06,
+		ExtFee05,
 	},
 	{
-		"http://www.verisign-grs.com/epp/namestoreExt-1.1",
-		"http://www.unitedtld.com/epp/charge-1.0",
+		ExtNamestore,
 	},
 	{
-		"urn:ietf:params:xml:ns:neulevel-1.0",
-		"urn:ietf:params:xml:ns:neulevel",
+		ExtCharge,
+	},
+	{
+		ExtNeulevel10,
+		ExtNeulevel,
 	},
 }
 
